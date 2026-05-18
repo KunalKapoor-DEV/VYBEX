@@ -5,8 +5,8 @@ import { Instagram, Twitter, Youtube, Mail } from "lucide-react";
 
 const socials = [
     { icon: Instagram, href: "https://www.instagram.com/vybex.co_/", label: "Instagram" },
-    { icon: Twitter, href: "https://www.instagram.com/vybex.co_/", label: "Twitter" },
-    { icon: Youtube, href: "https://www.instagram.com/vybex.co_/", label: "YouTube" },
+    { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+    { icon: Youtube, href: "https://youtube.com/", label: "YouTube" },
     { icon: Mail, href: "mailto:shouryyp@gmail.com", label: "Email" },
 ];
 
@@ -40,12 +40,12 @@ export default function Footer() {
                     viewport={{ once: true }}
                     className="font-syne text-sm md:text-base font-bold tracking-[0.3em] text-gray-500 uppercase text-center"
                 >
-                    VYBEX — Where Kolhapur Celebrates.
+                    VYBEXX ⚡ — Where Kolhapur Celebrates.
                 </motion.p>
 
                 {/* Copyright */}
                 <p className="font-inter text-xs text-gray-600">
-                    © {new Date().getFullYear()} VYBEX. All rights reserved.
+                    © {new Date().getFullYear()} VYBEXX. All rights reserved.
                 </p>
             </div>
         </footer>

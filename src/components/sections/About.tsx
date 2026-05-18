@@ -26,12 +26,17 @@ export default function About() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="font-inter text-gray-400 text-lg leading-relaxed mb-8"
+                        className="font-inter text-gray-400 text-lg leading-relaxed mb-6"
                     >
-                        Founded by <span className="text-white font-semibold">Shouryy Patil</span>,
-                        VYBEX is a youth-driven event brand redefining how Kolhapur celebrates.
-                        From epic DJ nights to intimate private parties, we bring unmatched energy
-                        to every moment.
+                        Creating premium nightlife, party &amp; concert experiences with unmatched vibes,
+                        music and energy. 🎶✨
+                    </motion.p>
+
+                    <motion.p
+                        variants={itemVariants}
+                        className="font-inter text-vybex-purple font-bold text-lg mb-8"
+                    >
+                        • VYBEXX ⚡ Live The Night
                     </motion.p>
 
                     <motion.blockquote
@@ -77,7 +82,7 @@ export default function About() {
                                     V
                                 </span>
                                 <span className="font-inter text-xs tracking-[0.3em] text-gray-400 uppercase">
-                                    Vybex Events
+                                    VYBEXX Events
                                 </span>
                             </div>
                         </div>

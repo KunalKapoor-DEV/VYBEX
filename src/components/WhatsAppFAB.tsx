@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react";
 export default function WhatsAppFAB() {
     return (
         <motion.a
-            href="https://wa.me/918446467701?text=Hey%20VYBEX%2C%20I%27m%20interested%20in%20booking%20an%20event!"
+            href="https://wa.me/918446467701?text=Hey%20VYBEXX%2C%20I%27m%20interested%20in%20booking%20an%20event!"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ scale: 0, opacity: 0 }}

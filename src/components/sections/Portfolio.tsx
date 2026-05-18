@@ -1,147 +1,183 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Calendar, MapPin, Music, Sparkles, Star } from "lucide-react";
 import SectionWrapper, { itemVariants } from "@/components/SectionWrapper";
 
-const portfolioItems = [
+const events = [
     {
         id: 1,
-        type: "image" as const,
-        src: "/portfolio/event-1.svg",
-        alt: "DJ Night Event",
-        span: "col-span-1 row-span-1",
-        aspectClass: "aspect-square",
+        name: "NEON NOIR",
+        date: "December 31, 2024",
+        venue: "Club Zenith, Kolhapur",
+        type: "New Year's Eve Bash",
+        description:
+            "An electrifying New Year's Eve celebration that brought Kolhapur's finest together for a night of neon lights, heavy bass, and pure energy.",
+        highlights: ["500+ Attendees", "Live DJ Set", "LED Light Show", "Open Bar"],
+        image: "/portfolio/event-1.svg",
+        accent: "#7C3AED",
     },
     {
         id: 2,
-        type: "image" as const,
-        src: "/portfolio/event-2.svg",
-        alt: "Private Party Setup",
-        span: "col-span-1 row-span-2",
-        aspectClass: "aspect-[9/16]",
+        name: "BASS ODYSSEY",
+        date: "October 5, 2024",
+        venue: "The Grand Arena, Kolhapur",
+        type: "Concert Night",
+        description:
+            "A full-scale concert night featuring back-to-back DJ performances, massive sound systems, and a crowd that never stopped moving.",
+        highlights: ["800+ Crowd", "3 DJs", "Pro Sound Setup", "VIP Zone"],
+        image: "/portfolio/event-2.svg",
+        accent: "#FAB520",
     },
     {
         id: 3,
-        type: "image" as const,
-        src: "/portfolio/event-3.svg",
-        alt: "College Festival",
-        span: "col-span-1 row-span-1",
-        aspectClass: "aspect-square",
+        name: "PURPLE HAZE",
+        date: "August 15, 2024",
+        venue: "Skyline Terrace, Kolhapur",
+        type: "Private Rooftop Party",
+        description:
+            "An exclusive rooftop party with curated playlists, ambient lighting, and a 360° view of the city skyline under the stars.",
+        highlights: ["Invite Only", "Rooftop Venue", "Curated Setlist", "Gourmet Catering"],
+        image: "/portfolio/event-3.svg",
+        accent: "#7C3AED",
     },
     {
         id: 4,
-        type: "image" as const,
-        src: "/portfolio/event-4.svg",
-        alt: "Corporate Event",
-        span: "col-span-1 row-span-1",
-        aspectClass: "aspect-square",
+        name: "RISE FEST",
+        date: "March 22, 2024",
+        venue: "KIT College Grounds, Kolhapur",
+        type: "College Festival",
+        description:
+            "The biggest college festival of 2024 featuring live performances, DJ battles, cultural acts and thousands of energized students.",
+        highlights: ["2000+ Students", "DJ Battle", "Live Acts", "Stall Fest"],
+        image: "/portfolio/event-4.svg",
+        accent: "#FAB520",
     },
     {
         id: 5,
-        type: "image" as const,
-        src: "/portfolio/event-5.svg",
-        alt: "Stage Setup",
-        span: "col-span-1 row-span-1",
-        aspectClass: "aspect-square",
+        name: "AFTERGLOW",
+        date: "February 14, 2024",
+        venue: "Moonlight Banquet, Kolhapur",
+        type: "Valentine's Night",
+        description:
+            "A romantic yet electric Valentine's night celebration that combined fine dining with a pulsating dance floor and live saxophone.",
+        highlights: ["300+ Couples", "Live Saxophone", "Dinner & Dance", "Photo Booth"],
+        image: "/portfolio/event-5.svg",
+        accent: "#7C3AED",
     },
     {
         id: 6,
-        type: "image" as const,
-        src: "/portfolio/event-6.svg",
-        alt: "Crowd Energy",
-        span: "col-span-1 row-span-2",
-        aspectClass: "aspect-[9/16]",
+        name: "VOLTAGE",
+        date: "January 1, 2024",
+        venue: "Infinity Lounge, Kolhapur",
+        type: "Corporate Gala",
+        description:
+            "A premium corporate gala blending professional networking with high-energy entertainment, custom branding, and a full production setup.",
+        highlights: ["Corporate Brand", "Full Production", "Networking Zone", "Award Night"],
+        image: "/portfolio/event-6.svg",
+        accent: "#FAB520",
     },
 ];
 
-export default function Portfolio() {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const typeIcons: Record<string, React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
+    "New Year's Eve Bash": Sparkles,
+    "Concert Night": Music,
+    "Private Rooftop Party": Star,
+    "College Festival": Sparkles,
+    "Valentine's Night": Star,
+    "Corporate Gala": Star,
+};
 
+export default function Portfolio() {
     return (
         <SectionWrapper id="portfolio" className="bg-gradient-to-b from-transparent via-vybex-purple/[0.02] to-transparent">
             <motion.div variants={itemVariants} className="text-center mb-16">
                 <span className="text-vybex-purple font-inter text-sm font-semibold tracking-widest uppercase mb-4 block">
-                    Our Work
+                    Previous Events
                 </span>
                 <h2 className="font-syne font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter-custom mb-4">
-                    The proof is in the{" "}
-                    <span className="gradient-text">vibe</span>
+                    Nights we{" "}
+                    <span className="gradient-text">made legendary</span>
                 </h2>
                 <p className="font-inter text-gray-400 text-lg max-w-2xl mx-auto">
-                    Moments we&apos;ve created. Energy we&apos;ve delivered.
+                    Every event carries a story. Here are the moments we&apos;ve curated.
                 </p>
             </motion.div>
 
-            {/* Masonry Grid */}
-            <motion.div
-                variants={itemVariants}
-                className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[250px]"
-            >
-                {portfolioItems.map((item, index) => (
-                    <motion.div
-                        key={item.id}
-                        variants={itemVariants}
-                        whileHover={{ scale: 1.02 }}
-                        className={`${item.span} relative rounded-2xl overflow-hidden cursor-pointer group`}
-                        onClick={() => setSelectedImage(item.src)}
-                    >
-                        <div className={`w-full h-full relative`}>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={item.src}
-                                alt={item.alt}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <span className="font-inter text-sm text-white font-medium">
-                                    {item.alt}
-                                </span>
-                            </div>
-                            {/* Purple tint on hover */}
-                            <div className="absolute inset-0 bg-vybex-purple/0 group-hover:bg-vybex-purple/10 transition-colors duration-300" />
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
-
-            {/* Lightbox */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 cursor-pointer"
-                    >
+            {/* Event Cards Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {events.map((event, index) => {
+                    const TypeIcon = typeIcons[event.type] || Sparkles;
+                    return (
                         <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.8, opacity: 0 }}
-                            transition={{ type: "spring", damping: 25 }}
-                            className="relative max-w-4xl max-h-[85vh] w-full"
-                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                            key={event.id}
+                            variants={itemVariants}
+                            custom={index}
+                            whileHover={{ y: -6, scale: 1.01 }}
+                            className="group relative rounded-2xl overflow-hidden glass-strong border border-vybex-purple/20 hover:border-vybex-purple/50 transition-all duration-500"
                         >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={selectedImage}
-                                alt="Event photo"
-                                className="w-full h-auto rounded-2xl object-contain max-h-[85vh]"
-                            />
-                            <button
-                                onClick={() => setSelectedImage(null)}
-                                className="absolute -top-4 -right-4 w-10 h-10 rounded-full glass-strong flex items-center justify-center text-white hover:bg-vybex-purple/20 transition-colors"
-                                aria-label="Close lightbox"
-                            >
-                                <X size={20} />
-                            </button>
+                            {/* Cover Image */}
+                            <div className="relative h-48 overflow-hidden">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={event.image}
+                                    alt={event.name}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                                {/* Event Type Badge */}
+                                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-vybex-purple/80 backdrop-blur-sm">
+                                    <TypeIcon size={12} className="text-white" />
+                                    <span className="font-inter text-[10px] font-semibold text-white uppercase tracking-wider">
+                                        {event.type}
+                                    </span>
+                                </div>
+                                {/* Event Name on Image */}
+                                <div className="absolute bottom-3 left-4 right-4">
+                                    <h3 className="font-syne font-extrabold text-2xl text-white tracking-tighter-custom text-glow">
+                                        {event.name}
+                                    </h3>
+                                </div>
+                            </div>
+
+                            {/* Card Content */}
+                            <div className="p-5">
+                                {/* Date & Venue */}
+                                <div className="flex flex-col gap-2 mb-3">
+                                    <div className="flex items-center gap-2 text-gray-400">
+                                        <Calendar size={13} className="text-vybex-purple flex-shrink-0" />
+                                        <span className="font-inter text-xs">{event.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-gray-400">
+                                        <MapPin size={13} className="text-vybex-purple flex-shrink-0" />
+                                        <span className="font-inter text-xs">{event.venue}</span>
+                                    </div>
+                                </div>
+
+                                {/* Description */}
+                                <p className="font-inter text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                                    {event.description}
+                                </p>
+
+                                {/* Key Highlights */}
+                                <div className="flex flex-wrap gap-2">
+                                    {event.highlights.map((highlight) => (
+                                        <span
+                                            key={highlight}
+                                            className="font-inter text-[10px] px-2 py-1 rounded-full border border-vybex-purple/30 text-vybex-purple bg-vybex-purple/5 uppercase tracking-wider"
+                                        >
+                                            {highlight}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    );
+                })}
+            </div>
+
+            {/* Neon divider */}
+            <motion.div variants={itemVariants} className="neon-line mt-24 opacity-50" />
         </SectionWrapper>
     );
 }

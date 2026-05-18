@@ -7,8 +7,9 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Why Us", href: "#why-vybex" },
+    { label: "Events", href: "#portfolio" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Timeline", href: "#timeline" },
     { label: "Contact", href: "#contact" },
 ];
 
@@ -38,8 +39,8 @@ export default function Navbar() {
                 {/* Logo */}
                 <a href="#" className="relative group">
                     <span className="font-syne text-2xl font-extrabold tracking-tighter-custom text-white">
-                        VYB
-                        <span className="text-vybex-purple">EX</span>
+                        VYBE
+                        <span className="text-vybex-purple">XX</span>
                     </span>
                     <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-vybex-purple transition-all duration-300 group-hover:w-full" />
                 </a>

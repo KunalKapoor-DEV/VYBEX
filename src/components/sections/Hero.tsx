@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import GlowButton from "@/components/GlowButton";
 
-const words = "KOLHAPUR'S MOST ENERGETIC EVENT EXPERIENCE".split(" ");
+const words = "PREMIUM PARTIES, CONCERTS & UNFORGETTABLE NIGHTLIFE EXPERIENCES. 🎶✨".split(" ");
 
 export default function Hero() {
     const ref = useRef<HTMLDivElement>(null);
@@ -61,8 +61,9 @@ export default function Hero() {
                                 delay: 0.3 + i * 0.1,
                                 ease: [0.25, 0.46, 0.45, 0.94],
                             }}
-                            className={`inline-block mr-3 md:mr-4 ${word === "ENERGETIC" ? "text-glow text-vybex-purple" : ""
-                                }`}
+                            className={`inline-block mr-3 md:mr-4 ${
+                                (word === "PREMIUM" || word === "UNFORGETTABLE") ? "text-glow text-vybex-purple" : ""
+                            }`}
                         >
                             {word}
                         </motion.span>
@@ -76,7 +77,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 1.2 }}
                     className="font-inter text-lg md:text-xl text-gray-400 mb-10 tracking-wide"
                 >
-                    We plan. We execute. You celebrate.
+                    Premium parties, concerts & unforgettable nightlife experiences. 🎶✨
                 </motion.p>
 
                 {/* CTAs */}

@@ -40,7 +40,7 @@ export default function WhyVybex() {
                 </span>
                 <h2 className="font-syne font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter-custom mb-4">
                     Why{" "}
-                    <span className="gradient-text">VYBEX</span>?
+                    <span className="gradient-text">VYBEXX</span>?
                 </h2>
             </motion.div>
 

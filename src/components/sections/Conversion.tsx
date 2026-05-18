@@ -66,7 +66,7 @@ export default function Conversion() {
                         className="font-inter text-gray-400 text-lg leading-relaxed mb-8"
                     >
                         Tell us about your event and we&apos;ll craft a custom package that
-                        matches your vision, scale, and budget. No templates—just pure VYBEX energy.
+                        matches your vision, scale, and budget. No templates—just pure VYBEXX energy.
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="flex flex-col gap-4">
@@ -88,6 +88,65 @@ export default function Conversion() {
                                 Custom pricing — no hidden fees
                             </span>
                         </div>
+                    </motion.div>
+
+                    {/* Contact Info Cards */}
+                    <motion.div variants={itemVariants} className="mt-8 grid grid-cols-2 gap-3">
+                        <a
+                            href="tel:+918446467701"
+                            className="flex items-center gap-3 p-3 rounded-xl glass border border-vybex-purple/20 hover:border-vybex-purple/50 transition-all duration-300 group"
+                        >
+                            <div className="w-8 h-8 rounded-lg bg-vybex-purple/15 flex items-center justify-center flex-shrink-0 group-hover:bg-vybex-purple/25 transition-colors">
+                                <span className="text-base">📞</span>
+                            </div>
+                            <div>
+                                <p className="font-inter text-[10px] text-gray-500 uppercase tracking-wider">Phone</p>
+                                <p className="font-inter text-xs text-white font-medium">+91 84464 67701</p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="mailto:shouryyp@gmail.com"
+                            className="flex items-center gap-3 p-3 rounded-xl glass border border-vybex-purple/20 hover:border-vybex-purple/50 transition-all duration-300 group"
+                        >
+                            <div className="w-8 h-8 rounded-lg bg-vybex-purple/15 flex items-center justify-center flex-shrink-0 group-hover:bg-vybex-purple/25 transition-colors">
+                                <span className="text-base">📧</span>
+                            </div>
+                            <div>
+                                <p className="font-inter text-[10px] text-gray-500 uppercase tracking-wider">Email</p>
+                                <p className="font-inter text-xs text-white font-medium">shouryyp@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="https://wa.me/918446467701"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 p-3 rounded-xl glass border border-vybex-purple/20 hover:border-vybex-purple/50 transition-all duration-300 group"
+                        >
+                            <div className="w-8 h-8 rounded-lg bg-vybex-purple/15 flex items-center justify-center flex-shrink-0 group-hover:bg-vybex-purple/25 transition-colors">
+                                <span className="text-base">💬</span>
+                            </div>
+                            <div>
+                                <p className="font-inter text-[10px] text-gray-500 uppercase tracking-wider">WhatsApp</p>
+                                <p className="font-inter text-xs text-white font-medium">+91 84464 67701</p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/vybex.co_/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 p-3 rounded-xl glass border border-vybex-purple/20 hover:border-vybex-purple/50 transition-all duration-300 group"
+                        >
+                            <div className="w-8 h-8 rounded-lg bg-vybex-purple/15 flex items-center justify-center flex-shrink-0 group-hover:bg-vybex-purple/25 transition-colors">
+                                <span className="text-base">📸</span>
+                            </div>
+                            <div>
+                                <p className="font-inter text-[10px] text-gray-500 uppercase tracking-wider">Instagram</p>
+                                <p className="font-inter text-xs text-white font-medium">@vybex.co_</p>
+                            </div>
+                        </a>
                     </motion.div>
                 </div>
 

@@ -20,21 +20,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "VYBEX – Kolhapur's Most Energetic Event Experience",
+    title: "VYBEXX ⚡ – Premium Parties, Concerts & Nightlife Experiences",
     description:
-        "VYBEX is an elite, youth-driven event brand redefining how Kolhapur celebrates. DJ Nights, Private Parties, Corporate Events — we create moments.",
+        "VYBEXX – Creating premium nightlife, party & concert experiences with unmatched vibes, music and energy. 🎶✨ DJ Nights, Private Parties, Concerts — we create unforgettable moments.",
     keywords: [
-        "VYBEX",
+        "VYBEXX",
+        "premium nightlife",
         "Kolhapur events",
         "DJ Night",
+        "concert events",
         "event management",
         "party planning",
         "corporate events",
         "college events",
     ],
     openGraph: {
-        title: "VYBEX – Kolhapur's Most Energetic Event Experience",
-        description: "We don't organize events. We create moments.",
+        title: "VYBEXX ⚡ – Premium Parties, Concerts & Nightlife",
+        description: "Premium parties, concerts & unforgettable nightlife experiences. 🎶✨",
         type: "website",
     },
 };
